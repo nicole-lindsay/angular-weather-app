@@ -9,7 +9,7 @@ viewsModule.config(['$routeProvider', function($routeProvider) {
     });
 }]);
 
-viewsModule.controller('CityCtrl', ['$scope', 'cityDetails', function($scope, cityDetails) {
+viewsModule.controller('CityCtrl', ['$scope', 'cityDetails', 'owmHistory' function($scope, cityDetails, owmHistory) {
 
   $scope.city = cityDetails.city;
   if($scope.city.country === 'CA') {
@@ -19,9 +19,11 @@ viewsModule.controller('CityCtrl', ['$scope', 'cityDetails', function($scope, ci
     item.dt_txt = Date.parse(item.dt_txt);
     return item;
   });
-}]);
-
-viewsModule.controller('CityCtrl', ['cityDetails', 'owmHistory', function(cityDetails, owmHistory){
   var vm = this;
   owmHistory.push(cityDetails.city);
 }]);
+
+// viewsModule.controller('CityCtrl', ['cityDetails', 'owmHistory', function(cityDetails, owmHistory){
+//   var vm = this;
+//   owmHistory.push(cityDetails.city);
+// }]);
