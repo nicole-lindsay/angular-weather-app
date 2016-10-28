@@ -20,3 +20,8 @@ viewsModule.controller('CityCtrl', ['$scope', 'cityDetails', function($scope, ci
     return item;
   });
 }]);
+
+viewsModule.controller('CityCtrl', ['cityDetails', 'owmHistory', function(cityDetails, owmHistory){
+  var vm = this;
+  owmHistory.push(cityDetails.city);
+}]);

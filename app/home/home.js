@@ -11,3 +11,8 @@ viewsModule.controller('HomeCtrl', ['$scope', 'owmUSCities', function($scope, ow
       $scope.cities = citiesXhr;
     });
 }]);
+
+viewsModule.controller('HomeCtrl', ['owmUSCities', 'owmHistory', function(owmUSCities, owmHistory){
+	var vm = this;
+	owmHistory.push({ name : "Home", isHome : true });
+}]);
