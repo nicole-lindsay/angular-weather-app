@@ -9,7 +9,7 @@ viewsModule.config(['$routeProvider', function($routeProvider) {
     });
 }]);
 
-viewsModule.controller('CityCtrl', ['$scope', 'cityDetails', 'owmHistory' function($scope, cityDetails, owmHistory) {
+viewsModule.controller('CityCtrl', ['$scope', 'cityDetails', 'owmHistory', function($scope, cityDetails, owmHistory) {
 
   $scope.city = cityDetails.city;
   if($scope.city.country === 'CA') {
